@@ -4,4 +4,4 @@
 # authors: unfoldingWord
 # url: https://github.com/unfoldingWord-dev/discourse-mermaid
 
-hide_plugin if self.respond_to?(:hide_plugin)
+enabled_site_setting :discourse_mermaid_enabled

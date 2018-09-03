@@ -9,8 +9,13 @@ export default {
       api.decorateCooked($elem => {
         const $mermaid = $elem.find(".mermaid");
 
-        if ($mermaid.length) {
-          loadScript("/plugins/discourse-mermaid/javascripts/mermaid.min.js").then(() => {
+        if (
+          Discourse.SiteSettings.discourse_mermaid_enabled &&
+          $mermaid.length
+        ) {
+          loadScript(
+            "/plugins/discourse-mermaid/javascripts/mermaid.min.js"
+          ).then(() => {
             mermaid.init(undefined, $mermaid);
           });
         }
